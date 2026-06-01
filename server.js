@@ -1,4 +1,12 @@
 // GET /rank/byname/:username
+import express from 'express';
+import Database from 'better-sqlite3';
+
+const app = express();
+const db = new Database('game.db');
+
+// Allow the server to read incoming JSON messages from Roblox
+app.use(express.json());
 // hello!
 app.get('/rank/byname/:username', (req, res) => {
   const player = db.prepare(
