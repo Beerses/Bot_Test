@@ -58,5 +58,10 @@ app.post('/rank', async (req, res) => {
   );
   if (!rbxRes.ok) return res.status(500).json({ error: 'Roblox API failed' });
 
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Roblox ranking server is live and listening on port ${PORT}!`);
+  });
+
   res.json({ old_rank: currentRank.name, new_rank: targetRank.name });
 });
