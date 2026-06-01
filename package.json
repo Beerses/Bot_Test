@@ -1,6 +1,7 @@
 {
   "name": "roblox-rank-bot",
   "version": "1.0.0",
+  "type": "module",
   "description": "Roblox ranking backend server",
   "main": "server.js",
   "scripts": {
