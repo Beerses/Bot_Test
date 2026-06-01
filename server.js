@@ -1,4 +1,5 @@
 // GET /rank/byname/:username
+// hello!
 app.get('/rank/byname/:username', (req, res) => {
   const player = db.prepare(
     'SELECT * FROM players WHERE LOWER(username) = LOWER(?)'
