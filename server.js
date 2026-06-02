@@ -54,9 +54,10 @@ if (rankCheck.count === 0) {
   // Format: insertRank.run('Exact Rank Name', RankLevel, 'The long Role ID');
   
   insertRank.run('Guest', 0, '00000000'); // Leave this one as 0
-  insertRank.run('Member', 1, '12345678'); // REPLACE 12345678 with real Role ID
-  insertRank.run('Moderator', 50, '87654321'); // REPLACE 87654321 with real Role ID
-  insertRank.run('Admin', 200, '11223344'); // REPLACE 11223344 with real Role ID
+  insertRank.run('Member', 1, '134722135'); // REPLACE 12345678 with real Role ID
+  insertRank.run('Client', 50, '152852159'); // REPLACE 87654321 with real Role ID
+  insertRank.run('Developer', 200, '134384170'); // REPLACE 11223344 with real Role ID
+  insertRank.run('Muffin', 255, '134782138')
   
   console.log("Group ranks successfully injected!");
 }
