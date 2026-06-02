@@ -43,6 +43,24 @@ db.prepare(`
   )
 `).run();
 
+// ─── STAGE 1.5: AUTO-FILL RANKS IF EMPTY ─────────────────────────────
+const rankCheck = db.prepare('SELECT COUNT(*) as count FROM ranks').get();
+
+if (rankCheck.count === 0) {
+  console.log("Database ranks are empty! Injecting group roles...");
+  const insertRank = db.prepare('INSERT INTO ranks (name, level, roblox_role_id) VALUES (?, ?, ?)');
+  
+  // ⚠️ CHANGE THESE TO MATCH YOUR EXACT ROBLOX GROUP ROLES!
+  // Format: insertRank.run('Exact Rank Name', RankLevel, 'The long Role ID');
+  
+  insertRank.run('Guest', 0, '00000000'); // Leave this one as 0
+  insertRank.run('Member', 1, '12345678'); // REPLACE 12345678 with real Role ID
+  insertRank.run('Moderator', 50, '87654321'); // REPLACE 87654321 with real Role ID
+  insertRank.run('Admin', 200, '11223344'); // REPLACE 11223344 with real Role ID
+  
+  console.log("Group ranks successfully injected!");
+}
+// ─────────────────────────────────────────────────────────────────────
 
 // ─── API ROUTES ───────────────────────────────────────────────────────
 
